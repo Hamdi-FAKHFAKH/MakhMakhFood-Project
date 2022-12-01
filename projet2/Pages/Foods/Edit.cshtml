@@ -1,0 +1,14 @@
+﻿@page
+@model projet2.Pages.Foods.EditModel
+@{
+}
+<form method="post" class="form p-4">
+        <div class="pb-3">  
+            <label asp-for="food.Name"></label>
+            <input type="text" asp-for ="food.Name"  class="form-control"/>
+            <input type="hidden" asp-for ="food.Id"/>
+        </div>
+     
+        <button class="btn btn-primary" style="width:150px" type="submit"> Update </button>
+        <a asp-page="Index" style="width:150px" class="btn btn-secondary">Back to List</a>
+    </form>

@@ -1,0 +1,71 @@
+﻿@page
+@model projet2.Pages.menuItem.UpsertModel
+@{
+}
+<div class="card m-5 m">
+    <div class="card-header">
+         <h3>@(Model.menuitem == null ? "Create" : "Upadte") Menu Item </h3>
+    </div>
+    <div class="row">
+        <div class="col-8">
+    <form method="post" class="form p-4" enctype="multipart/form-data">
+        <div class="pb-3">  
+            <input type="hidden" asp-for="menuitem.Id" />
+            <input type="hidden" asp-for="menuitem.Image" />
+            <label asp-for="menuitem.Name"></label>
+            <input type="text" asp-for ="menuitem.Name"  class="form-control"/>
+            <span asp-validation-for="menuitem.Name" class="text-danger"></span> 
+            <br />
+            <label asp-for="menuitem.Description"></label>
+
+            <textarea  asp-for ="menuitem.Description" class="form-control"> </textarea>
+            <span asp-validation-for="menuitem.Description" class="text-danger"></span> 
+            @* afficher l'erreur associer a la champs Name si existe *@
+
+            <label asp-for="menuitem.Image"></label>
+            <input type="file" id="image" name="image" class="form-control"/>
+
+            <label asp-for="menuitem.Price"></label>
+            <input type="text" asp-for ="menuitem.Price"  class="form-control"/>
+            <span asp-validation-for="menuitem.Price" class="text-danger"></span> <br /> 
+
+            
+
+            <label asp-for="menuitem.categorieId"></label>
+            <select asp-for="menuitem.categorieId" asp-items="Model.categorieList" class="form-select">
+                <option selected disabled> -- Select Categorie -- </option>
+            </select>
+            <span asp-validation-for="menuitem.categorieId" class="text-danger"></span> <br />
+
+             <label asp-for="menuitem.foodId"></label>
+            <select asp-for="menuitem.foodId" asp-items="Model.foodList" class=" form-select">
+                <option selected disabled> -- Select Categorie -- </option>
+            </select>
+            <span asp-validation-for="menuitem.foodId" class="text-danger"></span> <br />
+
+        </div>
+        <button class="btn btn-primary" style="width:150px" type="submit"> @(Model.menuitem == null ? "Create" : "Upadte") </button>
+        <a asp-page="Index" style="width:150px" class="btn btn-secondary">Back to List</a>
+    </form>
+    </div>
+    <div class="col-4">
+        @if(Model.menuitem != null) { <img  src="@Model.menuitem.Image" width="100%" class="border-1 p-2 ratio-1x1" alt="no found"/>}
+    </div>
+    </div>
+</div>
+@section Scripts {
+
+   <script>
+    tinymce.init({
+      selector: 'textarea',
+      plugins: 'a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker',
+      toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter image editimage pageembed permanentpen table tableofcontents',
+      toolbar_mode: 'floating',
+      tinycomments_mode: 'embedded',
+      tinycomments_author: 'Author name',
+    });
+  </script>
+    @{
+    <partial name="_ValidationScriptsPartial" />
+    }
+}

@@ -1,0 +1,20 @@
+﻿@page
+@model projet2.Pages.Foods.CreateModel
+@{
+}
+<div class="card m-5 m">
+    <form method="post" class="form p-4">
+        <div class="pb-3">  
+            <label asp-for="food.Name"></label>
+            <input type="text" asp-for ="food.Name"  class="form-control"/>
+            <span asp-validation-for="food.Name" class="text-danger"></span>  @* afficher l'erreur associer a la champs Name si existe *@
+        </div>
+        <button class="btn btn-primary" style="width:150px" type="submit"> Create </button>
+        <a asp-page="Index" style="width:150px" class="btn btn-secondary">Back to List</a>
+    </form>
+</div>
+@section scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

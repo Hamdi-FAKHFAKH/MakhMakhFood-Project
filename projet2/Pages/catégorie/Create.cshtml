@@ -1,0 +1,30 @@
+﻿@page
+@model projet2.Pages.catégorie.CreateModel
+@{
+}
+<div class="card m-5 m">
+    <form method="post" class="form p-4">
+        <div class="pb-3">  
+            <label asp-for="categories.Name"></label>
+            <input type="text" asp-for ="categories.Name"  class="form-control"/>
+            <span asp-validation-for="categories.Name" class="text-danger"></span>  @* afficher l'erreur associer a la champs Name si existe *@
+        </div>
+        <div class="pb-3">  
+            <label asp-for="categories.Orderdisplay"> </label>
+            <input type="text" asp-for="categories.Orderdisplay" class="form-control"/>
+            <span asp-validation-for="@Model.categories.Orderdisplay" class="text-danger"></span>
+        </div>
+        <div class="pb-3">  
+            <label asp-for="@Model.categories.date"></label>
+            <input type="date" asp-for="@Model.categories.date" class="form-control"/>
+            <span asp-validation-for="@Model.categories.date" class="text-danger"></span>
+        </div>
+        <button class="btn btn-primary" style="width:150px" type="submit"> Create </button>
+        <a asp-page="Index" style="width:150px" class="btn btn-secondary">Back to List</a>
+    </form>
+</div>
+@section scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

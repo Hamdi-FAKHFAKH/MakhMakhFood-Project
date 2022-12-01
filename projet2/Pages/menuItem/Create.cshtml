@@ -1,0 +1,42 @@
+﻿@page
+@model projet2.Pages.menuItem.CreateModel
+@{
+}
+<div class="card m-5 m">
+    <form method="post" class="form p-4">
+        <div class="pb-3">  
+            <label asp-for="menuitem.Name"></label>
+            <input type="text" asp-for ="menuitem.Name"  class="form-control"/>
+            <span asp-validation-for="menuitem.Name" class="text-danger"></span> 
+
+            <label asp-for="menuitem.Description"></label>
+            <input type="text" asp-for ="menuitem.Description"  class="form-control"/>
+            <span asp-validation-for="menuitem.Description" class="text-danger"></span> 
+            @* afficher l'erreur associer a la champs Name si existe *@
+
+            <label asp-for="menuitem.Image"></label>
+            <input type="text" asp-for ="menuitem.Image"  class="form-control"/>
+            <span asp-validation-for="menuitem.Image" class="text-danger"></span> 
+
+            <label asp-for="menuitem.Price"></label>
+            <input type="text" asp-for ="menuitem.Price"  class="form-control"/>
+            <span asp-validation-for="menuitem.Price" class="text-danger"></span> 
+
+            <label asp-for="menuitem.foodId"></label>
+            <input type="text" asp-for ="menuitem.foodId"  class="form-control"/>
+            <span asp-validation-for="menuitem.foodId" class="text-danger"></span> 
+
+            <label asp-for="menuitem.categorieId"></label>
+            <input type="text" asp-for ="menuitem.categorieId"  class="form-control"/>
+            <span asp-validation-for="menuitem.categorieId" class="text-danger"></span> 
+
+        </div>
+        <button class="btn btn-primary" style="width:150px" type="submit"> Create </button>
+        <a asp-page="Index" style="width:150px" class="btn btn-secondary">Back to List</a>
+    </form>
+</div>
+@section scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
