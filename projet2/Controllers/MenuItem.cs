@@ -4,8 +4,8 @@ using projet2.Repository.IRepository;
 // Trés important : noter bien il faut le nom de dossier étre Controllers 
 namespace projet2.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
+    [Route("api/[controller]")]  // route vers l'api /api/MenuItem
+    [ApiController] // pour défint qu'il sagit d'un api
     public class MenuItem : Controller
     {
         private readonly IUnitOfWork _db;

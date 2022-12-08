@@ -3,7 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using projet2.Model;
 
 namespace projet2.Data;
-
+// permet de faire convertir une entité en un tableau dans le Base de donnée
+// pour faire les opération de CRUD sur une entité en crée son repository
+// ( interface + implémentation ) 
 public class ApplicationDbContext1 : IdentityDbContext
 
     {

@@ -18,7 +18,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">MakhMakh😋</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -27,16 +27,15 @@
         <li class="nav-item">
           <a class="nav-link" asp-page="/Index">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" asp-page="/catégorie/Index">Catégorie</a>
+           <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Admin</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item"asp-page="/catégorie/Index">Catégorie</a>
+            <a class="dropdown-item" asp-page="/Foods/Index">Foods</a>
+            <a class="dropdown-item" asp-page="/menuItem/Index">MenuItem</a>
+          </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" asp-page="/Foods/Index">Foods</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" asp-page="/menuItem/Index">MenuItem</a>
-        </li>
-        <partial name="_LoginPartial"/>
+        <partial class="d-flex" name="_LoginPartial"/>
       </ul>
     </div>
   </div>
@@ -59,7 +58,7 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <script src="https://cdn.tiny.cloud/1/8g1y98udx0sskhtd1endaxk3nskhc19wtus2r5zm6u97z2sh/tinymce/6/tinymce.min.js"  referrerpolicy="origin" ></script>
+   <script src="https://cdn.tiny.cloud/1/1tu37iircljm8b5plcrpi5zkhj9p56vw378kzini1vl40j4a/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

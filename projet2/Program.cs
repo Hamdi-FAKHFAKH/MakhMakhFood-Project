@@ -42,6 +42,8 @@ app.UseAuthentication();;
 
 app.UseAuthorization();
 
+
+// ajouter lors on a besoin d'utiliser des controlleur ou API Dans notre projet with razor page 
 app.MapControllers();
 
 app.MapRazorPages();

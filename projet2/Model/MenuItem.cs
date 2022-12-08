@@ -16,7 +16,9 @@ namespace projet2.Model
         [Display(Name ="Food Type")]
         public int foodId { get; set; }
         [Display(Name = "Category")]
-        public int categorieId { get; set; }
+
+        // il faut utliser l'annotation nomdetableId(exp :categorieId) pour indiquer que cette propriéter un clé étranger au table (exp categorie)
+        public int categorieId { get; set; } 
         [ForeignKey("foodId")]
         public Food? food { get; set; } // pour definie un clé etrangé au table food 
         public Categorie? categorie { get; set; }   // pour definie un clé etranger au table categorie 
