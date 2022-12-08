@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - projet2</title>
+    <title>@ViewData["Title"] - MakhMakh😋</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/projet2.styles.css" asp-append-version="true" />
@@ -18,7 +18,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">MakhMakh😋</a>
+                <a class="navbar-brand" asp-page="/Index">MakhMakh😋</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -35,8 +35,9 @@
             <a class="dropdown-item" asp-page="/menuItem/Index">MenuItem</a>
           </div>
         </li>
-        <partial class="d-flex" name="_LoginPartial"/>
+        
       </ul>
+                    <partial class="d-flex me-5" name="_LoginPartial" />
     </div>
   </div>
 </nav>
